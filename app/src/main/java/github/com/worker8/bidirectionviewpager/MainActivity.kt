@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     val stringsRow1 = "Scenery" to mutableListOf("https://i.imgur.com/FHeHGRB.jpg", "https://i.imgur.com/Stt4bp8.jpg", "https://i.imgur.com/Adcqb3a.jpg", "https://i.imgur.com/qk0bjhg.jpg")
-    val stringsRow2 = "Corgi" to mutableListOf("https://i.imgur.com/GdLJSWd.jpg", "https://i.imgur.com/naucCPS.jpg", "https://i.imgur.com/bm3B1D2.jpg", "https://i.imgur.com/S27r6rM.jpg", "https://i.imgur.com/rb4N8PX.jpg")
+    val stringsRow2 = "Corgi" to mutableListOf("https://i.imgur.com/e05qeJD.jpg", "https://i.imgur.com/0cyNhmp.jpg", "https://i.imgur.com/bm3B1D2.jpg", "https://i.imgur.com/S27r6rM.jpg", "https://i.imgur.com/rb4N8PX.jpg")
     val stringsRow3 = "Interior Design" to mutableListOf("https://i.imgur.com/dn4RqVR.jpg", "https://i.imgur.com/tSon4Cu.jpg", "https://i.imgur.com/hjfVA8R.jpg", "https://i.imgur.com/6xq5eST.jpg", "https://i.imgur.com/DseSlT0.jpg", "https://i.imgur.com/tfiDgdG.jpg")
     val stringsRow4 = "Animals" to mutableListOf("https://i.imgur.com/5HEIddN.jpg", "https://i.imgur.com/37VjUX6.jpg", "https://i.imgur.com/MtImoQm.jpg", "https://i.imgur.com/Ye74n6j.png")
     val stringsRow5 = "More Animals" to mutableListOf("https://i.imgur.com/LKkNjxa.jpg", "https://i.imgur.com/q1r1jUF.jpg", "https://i.imgur.com/W2tYCkF.jpg", "https://i.imgur.com/LxkwMfN.jpg", "https://i.imgur.com/czWaDtW.jpg")
@@ -16,12 +16,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        hideSystemUI()
         setContentView(R.layout.activity_main)
 
         val biAdapter = MainAdapter(strings)
         homeViewPager.biAdapter = biAdapter
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        hideSystemUI()
     }
 
     private fun hideSystemUI() {
